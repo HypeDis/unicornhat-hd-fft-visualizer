@@ -1,0 +1,15 @@
+{
+  "name": "fft-visualizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "FFT-Main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dsp.js": "^1.0.1",
+    "unicornhat-hd": "0.0.4"
+  }
+}
