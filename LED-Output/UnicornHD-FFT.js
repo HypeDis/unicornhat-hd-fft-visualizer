@@ -36,11 +36,13 @@ const color = {
         g:51,
         b:221
     }
-}
+};
+
+
 
 const size = {x:16, y:16};
 
-function resetMatrix(color1 ,color2, color3) { //fills in all of the leds with the correct colors
+function resetMatrix(color1, color2, color3) { //fills in all of the leds with the correct colors
     
     for(let x = 0; x < 16; x++){
         let y = 0;

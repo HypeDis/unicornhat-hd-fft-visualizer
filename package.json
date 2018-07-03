@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "dsp.js": "^1.0.1",
+    "speaker": "^0.4.1",
     "unicornhat-hd": "0.0.4"
   }
 }
