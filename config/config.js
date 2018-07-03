@@ -3,8 +3,8 @@ const size = {
     y: 16
 }
 const sampleRate = 44100;
-const bufferSize = Math.pow(2, 12);
-const amplitude = 2400;
+const bufferSize = Math.pow(2, 10);
+const maxAmplitude = 2400;
 
 const color = {
     green: {
@@ -41,4 +41,4 @@ const color = {
 
 const bands = 16;
 
-module.exports = { size, size, sampleRate, bufferSize, amplitude, color, bands };
+module.exports = { size, size, sampleRate, bufferSize, maxAmplitude, color, bands };

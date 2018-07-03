@@ -4,12 +4,12 @@
 //amplitude
 const { FFT, Oscillator } = require('dsp.js');
 
-const { size, sampleRate, bufferSize, amplitude, bands } = require('./../config/config.js');
+const { size, sampleRate, bufferSize, maxAmplitude, bands } = require('./../config/config.js');
 const { roundedBandArray } = require('./Initialize-Graph.js');
 
 // console.log(roundedBandArray);
 
-function oscillatorFFT(frequency, type) {
+function oscillatorFFT(frequency, type, amplitude) {
 
     let osc = new Oscillator(type, frequency, amplitude, bufferSize, 44100);
     osc.generate();
@@ -38,7 +38,7 @@ function oscillatorFFT(frequency, type) {
         bandAverage[i] = rms;
 
     }
-    const logBase = Math.pow(amplitude, 1 / size.y)
+    const logBase = Math.pow(maxAmplitude, 1 / size.y)
     // console.log('log base', logBase);
     // console.log(bandAverage);
     const normalizedArray = [];
@@ -50,6 +50,7 @@ function oscillatorFFT(frequency, type) {
         normalizedArray[n] = normalizedVal;
     }
     console.log(normalizedArray);
+    return normalizedArray;
 }
 
 module.exports = oscillatorFFT;
