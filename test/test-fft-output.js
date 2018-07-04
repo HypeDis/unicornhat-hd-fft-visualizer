@@ -39,10 +39,15 @@ LED.setBrightness(0.4);
 // setTimeout(() => {killRandomLoop()}, 10000);//kill random loop
 
 let oscillationLoop = setInterval(() => {
-    LED.displayOut(oscGenerator( Math.floor(Math.random() * 8000), 'SINE', Math.floor(Math.random() * maxAmplitude - 500) ) );//need to make this async so unicorn.show only after normalized array is passed in
+    LED.displayOut(oscGenerator( Math.floor(Math.random() * 8000), 'SINE', Math.floor(Math.random() * maxAmplitude - 1500) ) );//need to make this async so unicorn.show only after normalized array is passed in
     unicornHat.show();
     
 }, 50);
 
-setTimeout(() => { clearInterval(oscillationLoop) }, 10000);
+let killFFT = () => {
+    clearInterval(oscillationLoop)
+    LED.off();
+}
+
+setTimeout(killFFT, 5000);
 
